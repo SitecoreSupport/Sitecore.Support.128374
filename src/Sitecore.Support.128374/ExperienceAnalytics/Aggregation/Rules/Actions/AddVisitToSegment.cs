@@ -8,7 +8,11 @@
     {
         public override void Apply(T ruleContext)
         {
-            ruleContext.Parameters.Add("addVisit", true);
+            string key = "addVisit";
+            if (!ruleContext.Parameters.ContainsKey(key))
+            {
+                ruleContext.Parameters.Add(key, true);
+            }
         }
     }
 }
